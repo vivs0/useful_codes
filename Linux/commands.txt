@@ -1,0 +1,2 @@
+ mvn -version 2>&1|grep "Apache Maven"|awk '{print $3}'
+ mvn -version 2>&1|grep "Maven home"|awk -F':' '{print $2}'
