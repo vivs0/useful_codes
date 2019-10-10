@@ -35,3 +35,20 @@ public String demoController(Model model, @PathVariable("id") String id){
 ```
   <input class="form-control" placeholder="employee name" th:field="*{form.employee.mobile[__${numdoc}__].number}"/>
 ```
+
+### for each 
+```
+<div class="form-row" >
+   <div class="col-sm-10" id="">
+      <label for"">List of employees</label>
+      <th:block th:each="doc,i : *{from.employees}">
+         <div class="form-row"  th:id="${i.index}">
+            <div class="col-sm-2">
+            <label for="pract_name" ></label>
+               <input type="text" class="form-control" th:value="${doc.employeeName}" th:disabled="disabled" />
+            </div>
+         </div>
+      </th:block>
+   </div>
+</div>
+```
