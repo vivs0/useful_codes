@@ -1,5 +1,6 @@
 ### Search in array of json
 ### Data ###
+```
 {
     "name: "Vivek Singh",
     "country": "India",
@@ -14,6 +15,7 @@
         ]
     }
 }
+```
 ```
 db.getCollection('Employee').find({
     "contact.mobile" : {$elemMatch: {"number" : "123456"}}
