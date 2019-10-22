@@ -44,3 +44,23 @@ db.getCollection('Department').aggregate(
 ]
 )
 ```
+
+### Mongodb Group by and count
+```
+db.employee.aggregate(
+[
+    {
+        $match:{"botReplyTime": {$gte: ISODate("2019-10-09T00:00:00.000Z")}}
+    },
+    {
+        $group:{
+            _id:"$userName", 
+            no_of_chat: {$sum : 1}, 
+            "doc" : {"$first": "$$ROOT"},
+            "user_id" : {"$first" : "$userId"},
+            "userName" : {"$first" : "$userName"}
+        }
+    }
+])
+```
+
