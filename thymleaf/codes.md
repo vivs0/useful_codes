@@ -52,3 +52,8 @@ public String demoController(Model model, @PathVariable("id") String id){
    </div>
 </div>
 ```
+
+### Check if a map contains key
+```
+<div th:if="${data.containsKey('survey')}">Hello</div>
+```
