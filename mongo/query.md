@@ -64,3 +64,10 @@ db.employee.aggregate(
 ])
 ```
 
+### Mongodb return matched array element
+```
+db.getCollection('employee').find(
+    {"contact.mobile.number" : "123456"},
+    {"contact.mobile.$" : 1}
+)
+```
