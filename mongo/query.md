@@ -71,3 +71,8 @@ db.getCollection('employee').find(
     {"contact.mobile.$" : 1}
 )
 ```
+
+### update each record with new field
+```
+db.employee.updateMany({},{$set:{"mobile" : NumberInt(0011223344)}})
+```
