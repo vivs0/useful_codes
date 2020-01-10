@@ -1,3 +1,0 @@
- mvn -version 2>&1|grep "Apache Maven"|awk '{print $3}'
- mvn -version 2>&1|grep "Maven home"|awk -F':' '{print $2}'
-netstat -ntlp|grep $(su $(ps -aux|grep "[n]ifi.sh"|awk '{print $1}') -c "$(ps -aux|grep "[n]ifi.sh"|awk '{print $(NF-1)}') status"|grep PID|awk '{print $NF}'|cut -d'=' -f2)|awk '{print $4}'
