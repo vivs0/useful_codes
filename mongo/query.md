@@ -76,3 +76,37 @@ db.getCollection('employee').find(
 ```
 db.employee.updateMany({},{$set:{"mobile" : NumberInt(0011223344)}})
 ```
+
+### mongo lookup multiple collections
+```
+    db.getCollection('Employee').aggregate([
+    {
+        $lookup:{
+            from: "Department",
+            localField: "<emp_id>",
+            foreignField: "<emp_id_in_department>",
+            as:"department"
+        }
+    },
+    {
+        $match:{
+            "emp_id" : "E002"
+        }
+    },
+    {
+        $unwind: "$employee"
+    },
+    {
+        $lookup:{
+            from: "UserRole",
+            localField: "department.role_id",
+            foreignField: "id",
+            as:"emp_role"
+        }
+
+    },
+    {
+        $unwind: "$emp_role"
+    }
+    ])
+```
