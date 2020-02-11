@@ -82,3 +82,11 @@ Object.flatten = function(data) {
     return result;
 }
 ```
+
+### Jquery pattren selector
+```
+	$('div[id^="startwith"')
+	$('div[id^="contain_anywhere"')
+	$('div[id$="endswith"')
+```
+https://stackoverflow.com/questions/190253/jquery-selector-regular-expressions
