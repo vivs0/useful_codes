@@ -126,3 +126,8 @@ db.demo.find(
         "child":{$slice: 10}
     })
 ```
+
+### Mongo query return all matched array elements
+```
+https://stackoverflow.com/questions/15415023/mongodb-select-matched-elements-of-subcollection
+```
