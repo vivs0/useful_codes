@@ -110,3 +110,19 @@ db.employee.updateMany({},{$set:{"mobile" : NumberInt(0011223344)}})
     }
     ])
 ```
+
+### Limit number sub documents to return
+```
+{
+    "id",
+    "child":[{
+    "key":"contains huge number of documents"
+    }]
+}
+
+db.demo.find(
+    {},
+    {
+        "child":{$slice: 10}
+    })
+```
