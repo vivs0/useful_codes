@@ -131,3 +131,24 @@ db.demo.find(
 ```
 https://stackoverflow.com/questions/15415023/mongodb-select-matched-elements-of-subcollection
 ```
+
+
+### Mongo graphlookup query
+```
+[{
+    $graphLookup:{
+        from : "master",
+        startWith: "$id",
+        connectFromField: "id",
+        connectToField: "partOf",
+        maxDepth: 5,
+        as : "out"
+    }
+},
+    {
+        $match:{
+            "id" : "45892221"
+        }
+    }
+]
+```
