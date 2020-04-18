@@ -152,3 +152,47 @@ https://stackoverflow.com/questions/15415023/mongodb-select-matched-elements-of-
     }
 ]
 ```
+
+### Mongo $filter use.
+### Usefull to filter the projected results in aggregation
+```
+   [
+       {
+            '$lookup':{
+              'from' : 'Department',
+              'localField' : 'department_id',
+              'foreignField': 'id',
+              'as':'department'
+		    }
+       },
+       {
+            'match' : {...}
+       },
+    {
+  	   '$project': {
+  		  'department': {
+  			  '$filter': {
+  				  'input': "$department",
+  				  'as': "department",
+  				  "cond": {
+  					 '$eq': [
+  						"$$department.branch",'branch_id']
+  					 ] 
+  				  }
+  			  }
+  		} ,
+  		'_id': 0,
+  		'id': 1,
+  		'name': 1,
+  	    }
+    }   
+   ]		
+    project = {
+            '$project': {
+              '_id' : 0,
+              'id' : 1,
+              'name' : 1,
+              'department.name' : 1			  
+            }
+    }
+```
