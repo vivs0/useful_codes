@@ -1,3 +1,7 @@
+### Update all record in mongo
+```
+update({},{$set:{'isApproved':true}}, false, true)
+```
 ### Search in array of json Mongo 3.2
 ### Employee ###
 ```
