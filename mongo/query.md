@@ -1,3 +1,8 @@
+### Get All uniqe values from collection
+```
+db.getCollection('CollectionName').distinct("COllection Fieldname")
+```
+
 ### Update all record in mongo
 ```
 update({},{$set:{'isApproved':true}}, false, true)
