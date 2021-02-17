@@ -1,3 +1,7 @@
+### Rename field in all record
+```
+db.getCollection('demo').update({}, {$rename:{"old":"new"}}, false, true);
+```
 ### Get All uniqe values from collection
 ```
 db.getCollection('CollectionName').distinct("COllection Fieldname")
