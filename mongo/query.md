@@ -1,3 +1,8 @@
+### Remove field in all records
+```
+db.collection.update({},{$unset:{"isMin":1}}, {multi:true})
+```
+
 ### Rename field in all record
 ```
 db.getCollection('demo').update({}, {$rename:{"old":"new"}}, false, true);
