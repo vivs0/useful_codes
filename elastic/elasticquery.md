@@ -1,1 +1,31 @@
-ds
+## List all indexes ##
+
+```GET /_cat/indices```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
