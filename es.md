@@ -41,3 +41,18 @@ curl -XPOST localhost:9200/customer/_update_by_query -H 'Content-Type: applicati
 	"sort":[]
 }
 ```
+
+### Delete records By Query
+
+```
+POST /index_name/_delete_by_query
+```
+```
+{
+  "query": {
+    "match": {
+      "type": "BIKE"
+    }
+  }
+}
+```
