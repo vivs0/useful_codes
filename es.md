@@ -56,3 +56,15 @@ POST /index_name/_delete_by_query
   }
 }
 ```
+
+### Update records by id
+```
+POST index-name/type-name/id/_update
+```
+```
+{
+    "doc" : {
+        "fieldName" : "updated value"
+    }
+}
+```
