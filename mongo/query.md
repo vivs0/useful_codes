@@ -214,3 +214,8 @@ https://stackoverflow.com/questions/15415023/mongodb-select-matched-elements-of-
             }
     }
 ```
+
+## Distict with filter
+```
+db.Article.distinct("Comment.Reply.ip",{"Comment.Reply.email" : "xxx"})
+```
