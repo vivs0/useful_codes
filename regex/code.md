@@ -8,3 +8,8 @@ https://regex101.com/
 ```
 (?<=from)(.*)(?=to)
 ```
+
+### Select everythin between two words
+```
+word1(.*?)word2
+```
