@@ -219,3 +219,25 @@ https://stackoverflow.com/questions/15415023/mongodb-select-matched-elements-of-
 ```
 db.Article.distinct("Comment.Reply.ip",{"Comment.Reply.email" : "xxx"})
 ```
+
+## Mongodb javascript example
+```
+db.getCollection('coll').find({
+    "features.featureKeyValueApproved.featureValue.No  of Cylinders":{$exists:true}
+})
+.forEach(function(e,i){
+    try{
+        if(e.features.featureKeyValueApproved != undefined){
+            e.features.featureKeyValueApproved.forEach(function(f,j){
+                if(f.featureKey === 'Engine and Transmission'){
+                    f.featureValue['No of Cylinders'] = f.featureValue['No  of Cylinders'];
+                    delete f.featureValue['No  of Cylinders'];
+                }
+            });
+            db.variants_v11.update({ _id : e._id }, e);
+        }
+    }catch(ex){
+        print(ex)
+    }
+})
+```
