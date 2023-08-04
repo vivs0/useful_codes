@@ -241,3 +241,20 @@ db.getCollection('coll').find({
     }
 })
 ```
+## FInd records which have duplicate field value
+```
+db.collection.aggregate([
+  {
+    $group: {
+      _id: "$field_with_duplicates",
+      count: { $sum: 1 },
+      documents: { $push: "$$ROOT" }
+    }
+  },
+  {
+    $match: {
+      count: { $gt: 1 }
+    }
+  }
+]);
+```
